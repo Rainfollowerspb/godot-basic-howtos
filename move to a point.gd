@@ -14,6 +14,10 @@ func _process(delta: float) -> void:
 		position += move(Destination, delta)
 
 
+func SetDestination(destinationCoords : Vector2):
+	Destination = destinationCoords - position
+
+
 func move(destination: Vector2, delta):
 	var increment = destination.normalized() * SPEED * delta
 	if increment.abs() >= destination.abs():
